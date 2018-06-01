@@ -18,6 +18,7 @@ import time
 from blink1.blink1 import blink1
 logging.basicConfig(level=logging.INFO, format='%(asctime)-2s %(name)-2s %(levelname)-2s %(message)s')
 
+
 # Configuration
 TIME_REPS = 4  # Number of "working" reps
 TIME_SETS = 2  # Number of "sets" per days
