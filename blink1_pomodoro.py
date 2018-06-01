@@ -15,7 +15,12 @@
 import logging
 import sys
 import time
-from blink1.blink1 import blink1
+try:
+    from blink1.blink1 import blink1
+except ImportError:
+    print('Error: blink1 library not installed.')
+    print('Try `pip install blink1` and run again.')
+    sys.exit(1)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s')
 
 
