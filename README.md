@@ -1,7 +1,7 @@
 # Pomodoro Timer using Blink(1)
 
 **Description**
-A Python Pomodoro timer using the blink(1) device as a visual cue.
+* A Python Pomodoro timer using the blink(1) device as a visual cue.
 
 **Requirements**
 * The blink(1) USB device.
