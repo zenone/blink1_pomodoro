@@ -77,7 +77,8 @@ def use_blink(color, minutes):
         b1.fade_to_rgb(1000, 0, 0, 0)
         b1.close()
         sys.exit(1)
-    except:
+    except Exception as e:
+        logging.info('Error: {0}'.format(e))
         logging.info('Make sure the blink(1) device is plugged in.')
         logging.info('Exiting.')
         sys.exit(1)
