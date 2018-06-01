@@ -16,7 +16,7 @@ import logging
 import sys
 import time
 from blink1.blink1 import blink1
-logging.basicConfig(level=logging.INFO, format='%(asctime)-2s %(name)-2s %(levelname)-2s %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s')
 
 
 # Configuration
@@ -70,14 +70,13 @@ def use_blink(color, minutes):
     """
     try:
         with blink1() as b1:
-            try:
-                b1.fade_to_color(1000, color)
-                time.sleep(minutes * 60)
-            except KeyboardInterrupt:
-                logging.info('Exiting. Control-C pressed.')
-                b1.fade_to_rgb(1000, 0, 0, 0)
-                b1.close()
-                sys.exit(1)
+            b1.fade_to_color(1000, color)
+            time.sleep(minutes * 60)
+    except KeyboardInterrupt:
+        logging.info('Exiting. Control-C pressed.')
+        b1.fade_to_rgb(1000, 0, 0, 0)
+        b1.close()
+        sys.exit(1)
     except:
         logging.info('Make sure the blink(1) device is plugged in.')
         logging.info('Exiting.')
